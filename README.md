@@ -72,6 +72,42 @@ O retorno é uma lista com todos os contatos, cada um utilizando o formato JSON 
 }
 ```
 
+## Cadastrando com o método POST
+O método post serve para registrar um contato na agenda. 
+
+Os dados são enviados através de um JSON inserido no body da requisição. Para o cadastro, é necessário que haja pelo menos o nome e o número. Caso haja a ausência de pelo menos um dos dois, o contato não será registrado e retornaremos um erro informando ao solicitante da requisição o campo faltante.
+
+A URL para utilizar este método é a seguinte:
+```
+http://localhost:3333/contatos
+```
+e o body no formato:
+```
+{
+    "nome":"Fulano",
+    "sobrenome":"Santos",
+    "numero":"988888888"
+}
+```
+
+O método retorna um JSON com o contato cadastrado e o status da operação
+```
+{
+    "id":"xxxxxxx",
+    "nome":"Fulano",
+    "sobrenome":"Santos",
+    "numero":"988888888",
+    "status":"sucesso"
+}
+```
+caso o cadastro seja efetuado com sucesso. Ou retorna o JSON
+```
+{
+    "status":"erro"
+}
+```
+em caso de erro.
+
 ## Apagando com o método DELETE
 Para apagar um contato, deve-se utilizar o método DELETE através da seguinte URL
 ```

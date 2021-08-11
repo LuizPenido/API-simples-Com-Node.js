@@ -54,6 +54,29 @@ app.get('/contatos', (request, response) => {
     return response.json(contatosFiltrados);
 });
 
+app.post('/contatos', (request, response) => {
+    const { nome, sobrenome, numero } = request.body;
+
+    if(nome === undefined || nome === "" || numero === undefined || numero === "")
+    {
+        return response.status(400).json({
+            "status":"erro",
+            "erro":"informação incompleta"
+        });
+    }
+
+    const contato = {
+        "id": uuid(),
+        "nome": nome,
+        "sobrenome": sobrenome === undefined ? "" : sobrenome,
+        "numero": numero
+    };
+    contatos.push(contato);
+
+    contato.status = "sucesso";
+    return response.json(contato); 
+});
+
 app.delete('/contatos/:id', (request, response) => {
     const { id } = request.params;
     const indexDoContato = contatos.findIndex(contato => contato.id === id);
