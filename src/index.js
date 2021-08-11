@@ -77,6 +77,29 @@ app.post('/contatos', (request, response) => {
     return response.json(contato); 
 });
 
+app.put('/contatos/:id', (request, response) => {
+    const { id } = request.params;
+    const { nome, sobrenome, numero } = request.body;
+
+    indexDoContato = contatos.findIndex(contato => contato.id === id);
+
+    if(indexDoContato < 0)
+    {
+        return response.status(400).json({
+            "status":"erro",
+            "erro":"id informado não existe"
+        });
+    }
+
+    contatos[indexDoContato].nome = nome === undefined ? contatos[indexDoContato].nome : nome;
+    contatos[indexDoContato].sobrenome = sobrenome === undefined ? contatos[indexDoContato].sobrenome : sobrenome;
+    contatos[indexDoContato].numero = numero === undefined ? contatos[indexDoContato].numero : numero;
+
+    const contato = {...contatos[indexDoContato]};
+    contato.status = "sucesso";
+    return response.status(200).json(contato);
+});
+
 app.delete('/contatos/:id', (request, response) => {
     const { id } = request.params;
     const indexDoContato = contatos.findIndex(contato => contato.id === id);
