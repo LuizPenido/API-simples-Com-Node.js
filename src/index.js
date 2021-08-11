@@ -54,4 +54,17 @@ app.get('/contatos', (request, response) => {
     return response.json(contatosFiltrados);
 });
 
+app.delete('/contatos/:id', (request, response) => {
+    const { id } = request.params;
+    const indexDoContato = contatos.findIndex(contato => contato.id === id);
+    const contato = contatos[indexDoContato];
+
+    if(indexDoContato < 0) {
+        return response.status(404).json({});
+    }
+
+    contatos.splice(indexDoContato, 1);
+    return response.status(200).json(contato);
+});
+
 app.listen(3333);

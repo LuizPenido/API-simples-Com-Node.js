@@ -72,3 +72,12 @@ O retorno é uma lista com todos os contatos, cada um utilizando o formato JSON 
 }
 ```
 
+## Apagando com o método DELETE
+Para apagar um contato, deve-se utilizar o método DELETE através da seguinte URL
+```
+http://localhost:3333/contatos/id
+```
+
+onde o paramêtro de roda id é o ID do contato que será apagado5. 
+
+O retorno para este método é um JSON contendo o contato apagado. Caso o ID não corresponda a nenhum contato, será retornado um JSON vazio.
