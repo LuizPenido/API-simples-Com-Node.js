@@ -108,6 +108,16 @@ caso o cadastro seja efetuado com sucesso. Ou retorna o JSON
 ```
 em caso de erro.
 
+## Editando com o método PUT
+
+Para editar um contato, deve-se utilizar o método PUT através da seguinte URL
+```
+http://localhost:3333/contatos/id
+```
+
+onde "id" é o id do contato que será editado. O corpo da requisição deve conter um JSON apenas com os campos que serão editados e os valores que serão inseridos na modificação.
+
+O retorno do método é um JSON com todos os dados do contato já editados.
 ## Apagando com o método DELETE
 Para apagar um contato, deve-se utilizar o método DELETE através da seguinte URL
 ```
