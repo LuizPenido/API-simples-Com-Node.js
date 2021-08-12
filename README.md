@@ -5,6 +5,15 @@ Este repositório contém uma simples API que demonstra funcionalidades básicas
 A API armazenará contatos como se fosse uma agenda telefônica, permitindo pesquisar (utilizando múltiplos campos), criar, editar e apagar contatos.
 
 ---
+
+# Sumário
+- [Baixando e executando o projeto](#executando-o-repositório)
+- Acessando as rodas
+    - [Consultar](#consultando-usuários-com-o-get)
+    - [Cadastrar](#cadastrando-com-o-método-post)
+    - [Editar](#editando-com-o-método-put)
+    - [Deletar](#apagando-com-o-método-delete)
+
 ## Executando o repositório
 
 Baixe o repositório, navegue até a pasta e instale todas as dependências com o seguinte comando na pasta raíz:
@@ -25,7 +34,7 @@ Pronto, a aplicação já está rodando.
 Utilizaremos métodos HTTP para acessar a rota. Portanto, é necessário a instalação de alguma ferramenta que permita a requisição através de métodos HTTP. Recomendo o Insomnia pela sua simplicidade. [Aqui está um tutorial fácil de instalação e utilização do Insomnia](https://www.youtube.com/watch?v=022dOdiAA8Q&ab_channel=RonanAdrielZenatti)
 
 ---
-##  Cadastrando usuários com o GET
+##  Consultando usuários com o GET
 Como o nome do método sugere, ele é responsável por consultar na API buscando os contatos. Podemos recuperar apenas contatos com determinado valor nos campos informados ou vários contatos através da seguinte URL
 
 ```
