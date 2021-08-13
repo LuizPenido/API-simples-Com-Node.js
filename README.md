@@ -1,4 +1,4 @@
-# API simples
+# API simples com Node.js
  
 Este repositório contém uma simples API que demonstra funcionalidades básicas do Express. Com o intuito de ser didático e o mais simples possível, todo o armazenamento será não persistente. (Para ver esta mesma API com o armazenamento em um banco de dados, clique [aqui]()).
 
